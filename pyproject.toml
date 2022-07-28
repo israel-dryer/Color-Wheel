@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "color wheel"
+version = "0.1.0"
+description = "A colorwheel selector demo tool built with Tkinter"
+authors = ["kanta <101532773+kantas-spike@users.noreply.github.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.dev-dependencies]
+black = "^22.6.0"
+flake8 = "^4.0.1"
+taskipy = "^1.10.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 119
+
+[tool.taskipy.tasks]
+format = "black *.py"
+lint = "flake8 --extend-ignore=E203 --max-line-length=119"
